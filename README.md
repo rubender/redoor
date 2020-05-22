@@ -85,7 +85,7 @@ npm install redoor
 
 >yarn
 ```sh
-npm install redoor
+yarn add redoor
 ```
 
 <!-- USAGE EXAMPLES -->

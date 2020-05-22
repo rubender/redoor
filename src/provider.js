@@ -140,7 +140,9 @@ function createStoreFactory({ Component, createContext, createElement }) {
       __emit = (event, data) => {
         __dbg('emit', event, data);
         this.listeners.map(listener => {
-          listener(event, data);
+          setTimeout(()=>{
+            listener(event, data);
+          });
         });
       } // __emit
 
