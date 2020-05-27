@@ -47,32 +47,31 @@
   </p>
 </p-->
 
-[[RU](https://github.com/rubender/redoor/blob/master/README.md) / [EN](https://github.com/rubender/redoor) ]
+[[RU](https://github.com/rubender/redoor/blob/master/README_RU.md) / [EN](https://github.com/rubender/redoor) ]
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-**[About the Project](#about-the-project)** <br/>
-**[Installation](#installation)** <br/>
-**[Getting Started](#getting-started)** <br/>
-**[Documentation](#documentation)** <br/>
-&nbsp;&nbsp;&nbsp; **[Store](#store)** <br/>
-&nbsp;&nbsp;&nbsp; [createStoreFactory](#create-store-factory) <br/>
-&nbsp;&nbsp;&nbsp; [createStore](#create-store) <br/>
-&nbsp;&nbsp;&nbsp; [Provider](#Provider) <br/>
-&nbsp;&nbsp;&nbsp; [Connect](#Connect) <br/>
-&nbsp;&nbsp;&nbsp; **[Actions](#Actions)** <br/>
-&nbsp;&nbsp;&nbsp; [initState](#initState) <br/>
-&nbsp;&nbsp;&nbsp; [ACTION functions](#action-functions) <br/>
-&nbsp;&nbsp;&nbsp; [listen](#listen) <br/>
-&nbsp;&nbsp;&nbsp; [bindStateMethods](#bindStateMethods) <br/>
-&nbsp;&nbsp;&nbsp; [__module_name](#module-name) <br/>
-&nbsp;&nbsp;&nbsp; **[Components props ](#createStore)** <br/>
-&nbsp;&nbsp;&nbsp; [cxRun(action_name, args)](#cxRun-string) <br/>
-&nbsp;&nbsp;&nbsp; [cxRun(object)](#cxRun-object) <br/>
-&nbsp;&nbsp;&nbsp; [cxEmit](#cxEmit) <br/>
-**[Devtool](#Devtool)**
-**[License](#license)**
+**[About the Project](#about-the-project)**
+**[Installation](#installation)**
+**[Getting Started](#getting-started)**
+**[Documentation](#documentation)**
+&nbsp;&nbsp;&nbsp; **[Store](#store)**
+&nbsp;&nbsp;&nbsp; <a href="#create-store-factory">createStoreFactory</a> <br/>
+&nbsp;&nbsp;&nbsp; [createStore](#create-store)<br/>
+&nbsp;&nbsp;&nbsp; [Provider](#Provider)<br/>
+&nbsp;&nbsp;&nbsp; [Connect](#Connect)<br/>
+&nbsp;&nbsp;&nbsp; **[Actions](#Actions)**<br/>
+&nbsp;&nbsp;&nbsp; [initState](#initState)<br/>
+&nbsp;&nbsp;&nbsp; [ACTION functions](#action-functions)<br/>
+&nbsp;&nbsp;&nbsp; [listen](#listen)<br/>
+&nbsp;&nbsp;&nbsp; [bindStateMethods](#bindStateMethods)<br/>
+&nbsp;&nbsp;&nbsp; [__module_name](#module-name)<br/>
+&nbsp;&nbsp;&nbsp; [cxRun(action_name, args)](#cxRun-string)<br/>
+&nbsp;&nbsp;&nbsp; [cxRun(object)](#cxRun-object)<br/>
+&nbsp;&nbsp;&nbsp; [cxEmit](#cxEmit)<br/>
+**[Devtool](#Devtool)**<br/>
+**[License](#license)**<br/>
 
 
 ## [About The Project](#about-the-project)
@@ -153,11 +152,16 @@ actaions  - методы взаимодействия с store и компоне
 Модуль инициализации проекта, здесь необходимо импортировать и у казать все необходимые actions моуди проекта. Так же по необходимости указать дебагер.
 Первое что надо сделать это создать store. Для этого необходимо инициализировать два метода
 createStoreFactory и его результат createStore. createStore возвращает два метода которые необходимо использовать в компонентах.
-[createStoreFactory](#create-store-factory)
+
+
 
 <h3>
-<a id="create-store-factory"  href="#create-store-factory"> createStoreFactory</a>  / <code>createStoreFactory ({ Component,  createContext,   createElement })</code>
+    <a href="#create-store-factory" id="create-store-factory">createStore</a> /
+    <code>
+        createStoreFactory ({ Component,  createContext,   createElement } )
+    </code>
 </h3>
+
 
  >__params__
 
@@ -186,11 +190,18 @@ const createStore = createStoreFactory({
 
 Вернет функцию __createStore__
 
+
+
+
+
 <h3>
-<a id="create-store-factory"  href="#create-store"> createStore</a>  / <code>createStore(modules_array[, devtool_object])</code>
+    <a href="#create-store" id="create-store">createStore</a> /
+    <code>
+        createStore(modules_array[, devtool_object])
+    </code>
 </h3>
 
- >__params__
+>__params__
 
 __modules_array__ - массив объектов  см. actions
 __devtool_object__ - необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
@@ -214,7 +225,15 @@ const { Provider, Connect } = createStore(
 
  Возвращает объект  __{ Provider , Connect }__
 
-### [Provider](#Provider) / `<Provider></Provider>`
+
+
+<h3>
+    <a href="#Provider" id="Provider">Provider</a> /
+    <code>
+        <Provider></Provider>
+    </code>
+</h3>
+
 Рутовый компонент, потомки могут быть подключены с помощью функции __Connect__
 >__props__
 
@@ -227,9 +246,18 @@ import {Provider} from './store.js'
 </Provider>
 ~~~
 
-### [Connect](#Connect) /  `Connect(Component [, filter_props_string])`
+
+
+<h3>
+    <a href="#Connect" id="Connect">Connect</a> /
+    <code>
+        Connect(Component [, filter_props_string])
+    </code>
+</h3>
+
 Функция соеденения глобального стора с компонентом
- >__params__
+
+>__params__
 
 __Component__ --- компонент которому необходимо подключить redoor
 __filter_props_string__ --- стринговая переменная список параметров кторые необходимо передать компоненту. Переменные должны быть разделены запятой.
@@ -245,6 +273,8 @@ const Component = ({counter, text})=><div>{text}:{counter}</div>
 export default Connect(Component, "text, counter")
 ~~~
 
+
+
 ## [Actions](#Actions)
 
 Все акшенсы, а также вспомогательные функции должны переданы в массив __createStore__
@@ -259,7 +289,15 @@ export default Connect(Component, "text, counter")
 
 функция должна вернуть объект с начальными значениями стора
 
-### [ACTION functions](#action-functions) / `["a_", "action"]action_name({state, args, emit})`
+
+
+<h3>
+    <a href="#action-functions" id="action-functions">ACTION functions</a> /
+    <code>
+        ["a_", "action"]action_name({state, args, emit})
+    </code>
+</h3>
+
 Акшенсы --- функции реализации логики работы с компанентами и сторам. Которые вызывают компоненты посредством __cxRun__. Функции должны в названии меть префикс __a___ или __action__,  в случае es6 модулей должны быть экспортированы.
  >__params__
 
@@ -303,7 +341,13 @@ export const a_getUsers = async ({ args: user_id, emit }) => {
 ~~~
 
 
-### [listen](#listen) /  `listen(name, data)`
+<h3>
+    <a href="#listen" id="listen">listen</a> /
+    <code>
+        listen(name, data)
+    </code>
+</h3>
+
 Каждый акшен модуль может содержать функцию которая инициируется каждый раз когда происходит событие генерированное функцией __emit__ компонентом или акшенсом.
  >__params__
 
@@ -312,8 +356,16 @@ __data__ ---  данные переданные через функцию __emit
 >__return__
 нет
 
-### [bindStateMethods](#bindStateMethods) / `bindStateMethods(getState, setState, emit)`
-###
+
+
+<h3>
+    <a href="#bindStateMethods" id="bindStateMethods">bindStateMethods</a> /
+    <code>
+        bindStateMethods(getState, setState, emit)
+    </code>
+</h3>
+
+
 Если вы ваши акшенсы имеют асинхронный кода то необходимо пробросить функции обнаваления стейта redoor. Это так же может быть полезно в случае работы с вебсокетами
  >__params__
 
@@ -335,7 +387,14 @@ export const bindStateMethods = (stateFn, updateState, emit) => {
 };
 ~~~
 
-### [__module_name](#module-name) / `__module_name`
+
+<h3>
+    <a href="#module-name" id="module-name">__module_name</a> /
+    <code>
+        __module_name
+    </code>
+</h3>
+
 Reserved variable name for debug. Redoor use this variable for debug.
 Ex.:
 ~~~javascript
@@ -344,12 +403,15 @@ export const  __module_name = 'pay_module'
 
 
 
-
-## components reserved  props
-
-### [cxRun](#cxRun-string) / `cxRun(action_name, args)`
+<h3>
+    <a href="#cxRun-string" id="cxRun-string">cxRun</a> /
+    <code>
+        cxRun(action_name, args)
+    </code>
+</h3>
 
 функция инициации акшенса или обновления стейта на прямую. Автоматически добавляется связанным компонентам через props.
+
 > **params:**
 
 __action_name__ --- стринговая переменная название акшена
@@ -367,7 +429,16 @@ __object__ --- объект обновления глобального стей
  >__return__
  нет
 
-###  [cxEmit](#cxEmit) / `cxEmit(event_name, args)`
+
+
+
+<h3>
+    <a href="#cxEmit" id="cxEmit">cxEmit</a> /
+    <code>
+        cxEmit(event_name, args)
+    </code>
+</h3>
+
 Функция отправки глобального события.
  >__params__
 
