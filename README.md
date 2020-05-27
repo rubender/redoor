@@ -25,9 +25,7 @@
 <br />
 <p align="center">
   <h1 align="center">
-      <a href="https://github.com/rubender/redoor">
-        🚪 redoor
-      </a>
+      <a href="https://github.com/rubender/redoor">🚪 redoor</a>
   </h1>
 
   <h3 align="center">
