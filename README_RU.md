@@ -57,7 +57,7 @@
 **[Getting Started](#getting-started)**
 **[Documentation](#documentation)**
 &nbsp;&nbsp;&nbsp; **[Store](#store)**
-&nbsp;&nbsp;&nbsp; [createStoreFactory](#create-store-factory) <br/>
+&nbsp;&nbsp;&nbsp; <a href="#create-store-factory">createStoreFactory</a> <br/>
 &nbsp;&nbsp;&nbsp; [createStore](#create-store)<br/>
 &nbsp;&nbsp;&nbsp; [Provider](#Provider)<br/>
 &nbsp;&nbsp;&nbsp; [Connect](#Connect)<br/>
