@@ -25,7 +25,9 @@
 <br />
 <p align="center">
   <h1 align="center">
-      <a href="https://github.com/rubender/redoor"> redoor  </a>
+      <a href="https://github.com/rubender/redoor">
+        🚪 redoor
+      </a>
   </h1>
 
   <h3 align="center">
@@ -229,7 +231,7 @@ const { Provider, Connect } = createStore(
 
 <h3>
     <a href="#Provider" id="Provider">Provider</a> /
-    &#60;Provider&#62;&#60;/Provider&#62;
+    <code>&#60;Provider&#62;&#60;/Provider&#62;</code>
 </h3>
 
 Рутовый компонент, потомки могут быть подключены с помощью функции __Connect__
