@@ -1,16 +1,3 @@
-
-
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 <!--
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -19,33 +6,22 @@
 [![MIT License][license-shield]][license-url]
 <!--[![LinkedIn][linkedin-shield]][linkedin-url]-->
 
+<pre>
+  ______ _______ ______   _____   _____   ______
+ |_____/ |______ |     \ |     | |     | |_____/
+ |    \_ |______ |_____/ |_____| |_____| |    \_
+</pre>
 
-
-<!-- PROJECT LOGO -->
 <br />
 <p align="center">
   <h1 align="center">
       <a href="https://github.com/rubender/redoor">🚪 redoor</a>
   </h1>
-
   <h3 align="center">
       React / Preact / Inferno <br />
       State container manager
   </h3>
-
-  <!--p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
-</p-->
+</p>
 
 [[RU](https://github.com/rubender/redoor/blob/master/README_RU.md) / [EN](https://github.com/rubender/redoor) ]
 
@@ -142,6 +118,25 @@ render(<Main />, document.getElementById("app"));
 ```
 
 ## [Documentation](#documentation)
+<pre>
+                           +-----+                  `
+                           |Store|                  `
+                           +-----+                  `
+                              |                     `
+ +---------+    +-----+    +------+    +---------+  `
+ |Component| -> |cxRun| -> |Action| -> |new state|  `
+ +---------+    +-----+    +------+    +---------+  `
+      ^                                      |      `
+      |                                      |      `
+      +--------------------------------------+      `
+</pre>
+
+
+
+
+
+
+
 Redoor - состоит из двух сущностей: store и actaions.
 store - место хранения глобального стейта
 actaions  - методы взаимодействия с store и компонентами
@@ -163,9 +158,14 @@ createStoreFactory и его результат createStore. createStore воз�
 </h3>
 
 
- >__params__
-
 Прежде необходимо указать с какой библиотекой работает ваш проект. Это моет быть react, preact, inferno. Функция инициализации проекта, в качестве входных параметров принимет объект с тремя переменными.
+
+>__params__
+
+**Component**
+**createContext**
+**createElement**
+
 *react:*
 ~~~javascript
 import React from 'react'
@@ -186,11 +186,10 @@ const createStore = createStoreFactory({
     createElement:h
 });
 ~~~
- >__return__
 
-Вернет функцию __createStore__
+>__return__
 
-
+Вернет функцию **createStore**
 
 
 
@@ -203,11 +202,11 @@ const createStore = createStoreFactory({
 
 >__params__
 
-__modules_array__ --- массив объектов  см. actions <br/>
-__devtool_object__ --- необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
->  host  --- ip devtool сервера
->  port  --- порт
->  name  --- название проекта
+__modules_array__ - массив объектов (модулей) см. actions <br/>
+__devtool_object__ - необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
+>  host  - ip devtool сервера
+>  port  - порт
+>  name  - название проекта
 
 *пример:*
 ~~~javascript
@@ -223,7 +222,7 @@ const { Provider, Connect } = createStore(
 ~~~
 >__return__
 
-Возвращает объект  __{ Provider , Connect }__
+Возвращает объект  **{ Provider , Connect }**
 
 
 
@@ -232,10 +231,12 @@ const { Provider, Connect } = createStore(
     <code>&#60;Provider&#62;&#60;/Provider&#62;</code>
 </h3>
 
-Рутовый компонент, потомки могут быть подключены с помощью функции __Connect__
+Рутовый компонент, потомки которого могут быть подключены с помощью функции **Connect**
+
 >__props__
 
-__providerConfig__   --- параметр инициализации передается в функцию  __initState__
+__providerConfig__  - "пропс" компонента передается в функцию  **initState** модуля "акшенсов".
+
 *пример:*
 ~~~javascript
 import {Provider} from './store.js'
@@ -253,12 +254,12 @@ import {Provider} from './store.js'
     </code>
 </h3>
 
-Функция соеденения глобального стора с компонентом
+Функция соеденения redoor стора с компонентом
 
 >__params__
 
-__Component__ --- компонент которому необходимо подключить redoor
-__filter_props_string__ --- стринговая переменная список параметров кторые необходимо передать компоненту. Переменные должны быть разделены запятой.
+**Component** - компонент к которому необходимо подключить redoor <br/>
+**filter_props_string** - стринговая переменная, список параметров кторые необходимо передать компоненту. Переменные должны быть разделены запятой.
 
 > __return __
 
@@ -275,8 +276,8 @@ export default Connect(Component, "text, counter")
 
 ## [Actions](#Actions)
 
-Все акшенсы, а также вспомогательные функции должны переданы в массив __createStore__
-Модуль акшенсов имеет несколько функций название которых зарезервированный redoor. Название акшенсы должны начинаться с префиксов: __a___ или __action__.  Если вы используете es6 модули вы можете экспортировать функции redoor автоматически добавит их. Каждый модуль акшенсов может экспортировать свою функцию инициализации. Redoor объединит все объекты в один. В случае если вы продублируете один и тот же параметр в разных модулях redoor выведет в консоль ошибку. Чтобы понять в каких модулях произошла ошибка укажите ____module_name__ переменную.
+Все акшенсы, а также вспомогательные функции должны быть переданы в массив **createStore**
+Модуль акшенсов имеет несколько функций название которых зарезерованно redoor. Названия акшенсов должны начинаться с префиксов: **a_** или **action**. Каждый модуль акшенсов может экспортировать свою функцию инициализации. Redoor объединит все объекты в один. В случае если вы продублируете один и тот же параметр в разных модулях redoor выведет в консоль ошибку. Чтобы понять в каких модулях произошла ошибка укажите **__module_name** переменную в ваш модуль.
 
 
 
@@ -358,8 +359,8 @@ export const a_getUsers = async ({ args: user_id, emit }) => {
 Каждый акшен модуль может содержать функцию которая инициируется каждый раз когда происходит событие генерированное функцией __emit__ компонентом или акшенсом.
  >__params__
 
-__name__ --- название события <br/>
-__data__ ---  данные переданные через функцию __emit__ <br/>
+__name__ - название события <br/>
+__data__ - данные переданные через функцию __emit__ <br/>
 >__return__
 нет
 
@@ -376,9 +377,9 @@ __data__ ---  данные переданные через функцию __emit
 Если вы ваши акшенсы имеют асинхронный кода то необходимо пробросить функции обнаваления стейта redoor. Это так же может быть полезно в случае работы с вебсокетами
  >__params__
 
-__getState__ ---  функция получения стейта <br/>
-__setState__ --- функция установки стейта <br/>
-__emit__ ---- функция отправки события <br/>
+__getState__ -  функция получения стейта <br/>
+__setState__ - функция установки стейта <br/>
+__emit__ - функция отправки события <br/>
 >__return__
 нет
 
@@ -420,8 +421,8 @@ export const  __module_name = 'pay_module'
 
 > **params:**
 
-__action_name__ --- стринговая переменная название акшена <br/>
-__args__ --- передоваемые акшену данные <br/>
+__action_name__ - стринговая переменная название акшена <br/>
+__args__ - передоваемые акшену данные <br/>
 
 > **return:**
 нет
@@ -438,7 +439,7 @@ __args__ --- передоваемые акшену данные <br/>
 Если в качестве параметра указан объект, то функция обнавляет стейт напрямую без акшена.
  >__params__
 
-__object__ --- объект обновления глобального стейта <br/>
+__object__ - объект обновления глобального стейта <br/>
  >__return__
  нет
 
@@ -454,8 +455,8 @@ __object__ --- объект обновления глобального стей
 Функция отправки глобального события.
 >__params__
 
- __name__ --- название события <br/>
- __data__ --- передоваемые данные <br/>
+ __event_name__ - название события <br/>
+ __data__ - передоваемые данные <br/>
 
 >__return__
   нет
@@ -465,56 +466,9 @@ __object__ --- объект обновления глобального стей
 
 [redoor-devtool](https://github.com/rubender/redoor-devtool)
 
-<!-- ROADMAP
-## Roadmap
-
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a list of proposed features (and known issues).
--->
-
-
-<!-- CONTRIBUTING
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
--->
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-
-
-<!-- CONTACT
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
--->
-
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
