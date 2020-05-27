@@ -182,7 +182,7 @@ const createStore = createStoreFactory({
 
 Вернет функцию __createStore__
 
-<h3><a id="#create-store" href="#create-store">createStore</a> / <code>createStore(modules_array[, devtool_object])</code></h3>
+<h3><a id="create-store" href="#create-store">createStore</a> / <code>createStore(modules_array[, devtool_object])</code></h3>
 
 >__params__
 
