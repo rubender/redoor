@@ -52,12 +52,12 @@
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-**[About the Project](#about-the-project)**
-**[Installation](#installation)**
-**[Getting Started](#getting-started)**
-**[Documentation](#documentation)**
-&nbsp;&nbsp;&nbsp; **[Store](#store)**
-&nbsp;&nbsp;&nbsp; <a href="#create-store-factory">createStoreFactory</a> <br/>
+**[About the Project](#about-the-project)** <br/>
+**[Installation](#installation)** <br/>
+**[Getting Started](#getting-started)** <br/>
+**[Documentation](#documentation)** <br/>
+&nbsp;&nbsp;&nbsp; **[Store](#store)** <br/>
+&nbsp;&nbsp;&nbsp; [createStoreFactory](#create-store-factory) <br/>
 &nbsp;&nbsp;&nbsp; [createStore](#create-store)<br/>
 &nbsp;&nbsp;&nbsp; [Provider](#Provider)<br/>
 &nbsp;&nbsp;&nbsp; [Connect](#Connect)<br/>
@@ -93,7 +93,7 @@ yarn add redoor
 
 ##  [Getting Started](#getting-started)
 
- Пример для preact
+Пример для preact
 ```javascript
 import { h, Component, createContext, render } from 'preact';
 import createStoreFactory from 'redoor';
@@ -203,11 +203,11 @@ const createStore = createStoreFactory({
 
 >__params__
 
-__modules_array__ - массив объектов  см. actions
-__devtool_object__ - необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
->  host     ---  ip devtool сервера
->  port     --- порт
-> name  --- название проекта
+__modules_array__ --- массив объектов  см. actions <br/>
+__devtool_object__ --- необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
+>  host  --- ip devtool сервера
+>  port  --- порт
+>  name  --- название проекта
 
 *пример:*
 ~~~javascript
@@ -221,15 +221,15 @@ const { Provider, Connect } = createStore(
     }
 );
 ~~~
- >__return__
+>__return__
 
- Возвращает объект  __{ Provider , Connect }__
+Возвращает объект  __{ Provider , Connect }__
 
 
 
 <h3>
     <a href="#Provider" id="Provider">Provider</a> /
-    `<Provider></Provider>`
+    &#60;Provider&#62;&#60;/Provider&#62;
 </h3>
 
 Рутовый компонент, потомки могут быть подключены с помощью функции __Connect__
@@ -289,9 +289,9 @@ export default Connect(Component, "text, counter")
 </h3>
 
 Зарезервированная функция инициализации стора.    Она может быть как объект так и функция.
- >__params__
+>__params__
 
- __providerConfig__ ---  параметр получаемый от __Provider__
+ __providerConfig__ ---  параметр получаемый от __Provider__ <br/>
 >__return__
 
 функция должна вернуть объект с начальными значениями стора
@@ -309,9 +309,9 @@ export default Connect(Component, "text, counter")
  >__params__
 
 Каждый акшенс имеет в качестве параметра объект с тремя аргументами:
-__state__  --- текущий глобальный стейт
-__args__ --- параметр передаваемый через __cxRun__
-__emit(name, data)__ --- функция отправки глобального события. Где  __name__ --- название события, __data__ --- передоваемые данные
+__state__  --- текущий глобальный стейт <br/>
+__args__ --- параметр передаваемый через __cxRun__ <br/>
+__emit(name, data)__ --- функция отправки глобального события. Где  __name__ --- название события, __data__ --- передоваемые данные <br/>
 
 >__return__
 
@@ -358,8 +358,8 @@ export const a_getUsers = async ({ args: user_id, emit }) => {
 Каждый акшен модуль может содержать функцию которая инициируется каждый раз когда происходит событие генерированное функцией __emit__ компонентом или акшенсом.
  >__params__
 
-__name__ --- название события
-__data__ ---  данные переданные через функцию __emit__
+__name__ --- название события <br/>
+__data__ ---  данные переданные через функцию __emit__ <br/>
 >__return__
 нет
 
@@ -376,9 +376,9 @@ __data__ ---  данные переданные через функцию __emit
 Если вы ваши акшенсы имеют асинхронный кода то необходимо пробросить функции обнаваления стейта redoor. Это так же может быть полезно в случае работы с вебсокетами
  >__params__
 
-__getState__ ---  функция получения стейта
-__setState__ --- функция установки стейта
-__emit__ ---- функция отправки события
+__getState__ ---  функция получения стейта <br/>
+__setState__ --- функция установки стейта <br/>
+__emit__ ---- функция отправки события <br/>
 >__return__
 нет
 
@@ -416,23 +416,29 @@ export const  __module_name = 'pay_module'
         cxRun(action_name, args)
     </code>
 </h3>
-
-функция инициации акшенса или обновления стейта на прямую. Автоматически добавляется связанным компонентам через props.
+Функция инициации акшенса или обновления стейта на прямую. Автоматически добавляется связанным компонентам через props.
 
 > **params:**
 
-__action_name__ --- стринговая переменная название акшена
-__args__ --- передоваемые акшену данные
+__action_name__ --- стринговая переменная название акшена <br/>
+__args__ --- передоваемые акшену данные <br/>
 
 > **return:**
-
-
 нет
-###  [cxRun](#cxRun-object) / `cxRun(object)`
-если в качестве параметра указан объект, то функция обнавляет стейт напрямую без акшена.
+
+
+
+<h3>
+    <a href="#cxRun-object" id="cxRun-object">cxRun</a> /
+    <code>
+        cxRun(object)
+    </code>
+</h3>
+
+Если в качестве параметра указан объект, то функция обнавляет стейт напрямую без акшена.
  >__params__
 
-__object__ --- объект обновления глобального стейта
+__object__ --- объект обновления глобального стейта <br/>
  >__return__
  нет
 
@@ -445,14 +451,13 @@ __object__ --- объект обновления глобального стей
         cxEmit(event_name, args)
     </code>
 </h3>
-
 Функция отправки глобального события.
- >__params__
+>__params__
 
- __name__ --- название события
- __data__ --- передоваемые данные
+ __name__ --- название события <br/>
+ __data__ --- передоваемые данные <br/>
 
- >__return__
+>__return__
   нет
 
 <!-- Devtool -->
