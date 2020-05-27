@@ -22,7 +22,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/rubender/redoor">🚪 redoor  </a>
+  <h1 align="center">
+      <a href="https://github.com/rubender/redoor"> redoor  </a>
+  </h1>
 
   <h3 align="center">
       React / Preact / Inferno <br />
@@ -97,7 +99,11 @@ yarn add redoor
 import { h, Component, createContext, render } from 'preact';
 import createStoreFactory from 'redoor';
 
-const createStore = createStoreFactory({Component, createContext, createElement:h});
+const createStore = createStoreFactory({
+    Component:Component,
+    createContext:createContext,
+    createElement:h
+});
 
 const actions_module = {
   initState:{
@@ -153,7 +159,7 @@ render(<Main />, document.getElementById("app"));
 ### a_[_action name_]({state, args, emit}),  action_[_action name_]({state, args, emit})
 
 ### __module_name
-
+In actions module export const variable ____module_name__ for
 
 ## components
 
