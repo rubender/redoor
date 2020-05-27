@@ -47,32 +47,32 @@
   </p>
 </p-->
 
-[[RU](https://github.com/rubender/redoor/blob/master/README_RU.md) / [EN](https://github.com/rubender/redoor) ]
+[[RU](https://github.com/rubender/redoor/blob/master/README.md) / [EN](https://github.com/rubender/redoor) ]
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
-**[About the Project](#about-the-project)**
-**[Installation](#installation)**
-**[Getting Started](#getting-started)**
-**[Documentation](#documentation)**
-&nbsp;&nbsp;&nbsp; **[Store](#store)**
-&nbsp;&nbsp;&nbsp; <a href="#create-store-factory">createStoreFactory</a> <br/>
-&nbsp;&nbsp;&nbsp; [createStore](#create-store)<br/>
-&nbsp;&nbsp;&nbsp; [Provider](#Provider)<br/>
-&nbsp;&nbsp;&nbsp; [Connect](#Connect)<br/>
-&nbsp;&nbsp;&nbsp; **[Actions](#Actions)**<br/>
-&nbsp;&nbsp;&nbsp; [initState](#initState)<br/>
-&nbsp;&nbsp;&nbsp; [ACTION functions](#action-functions)<br/>
-&nbsp;&nbsp;&nbsp; [listen](#listen)<br/>
-&nbsp;&nbsp;&nbsp; [bindStateMethods](#bindStateMethods)<br/>
-&nbsp;&nbsp;&nbsp; [__module_name](#module-name)<br/>
-&nbsp;&nbsp;&nbsp; **[Components props ](#createStore)**<br/>
-&nbsp;&nbsp;&nbsp; [cxRun(action_name, args)](#cxRun-string)<br/>
-&nbsp;&nbsp;&nbsp; [cxRun(object)](#cxRun-object)<br/>
-&nbsp;&nbsp;&nbsp; [cxEmit](#cxEmit)<br/>
-**[Devtool](#Devtool)**<br/>
-**[License](#license)**<br/>
+**[About the Project](#about-the-project)** <br/>
+**[Installation](#installation)** <br/>
+**[Getting Started](#getting-started)** <br/>
+**[Documentation](#documentation)** <br/>
+&nbsp;&nbsp;&nbsp; **[Store](#store)** <br/>
+&nbsp;&nbsp;&nbsp; [createStoreFactory](#create-store-factory) <br/>
+&nbsp;&nbsp;&nbsp; [createStore](#create-store) <br/>
+&nbsp;&nbsp;&nbsp; [Provider](#Provider) <br/>
+&nbsp;&nbsp;&nbsp; [Connect](#Connect) <br/>
+&nbsp;&nbsp;&nbsp; **[Actions](#Actions)** <br/>
+&nbsp;&nbsp;&nbsp; [initState](#initState) <br/>
+&nbsp;&nbsp;&nbsp; [ACTION functions](#action-functions) <br/>
+&nbsp;&nbsp;&nbsp; [listen](#listen) <br/>
+&nbsp;&nbsp;&nbsp; [bindStateMethods](#bindStateMethods) <br/>
+&nbsp;&nbsp;&nbsp; [__module_name](#module-name) <br/>
+&nbsp;&nbsp;&nbsp; **[Components props ](#createStore)** <br/>
+&nbsp;&nbsp;&nbsp; [cxRun(action_name, args)](#cxRun-string) <br/>
+&nbsp;&nbsp;&nbsp; [cxRun(object)](#cxRun-object) <br/>
+&nbsp;&nbsp;&nbsp; [cxEmit](#cxEmit) <br/>
+**[Devtool](#Devtool)**
+**[License](#license)**
 
 
 ## [About The Project](#about-the-project)
@@ -154,7 +154,11 @@ actaions  - методы взаимодействия с store и компоне
 Первое что надо сделать это создать store. Для этого необходимо инициализировать два метода
 createStoreFactory и его результат createStore. createStore возвращает два метода которые необходимо использовать в компонентах.
 [createStoreFactory](#create-store-factory)
-###  [createStoreFactory](#create-store-factory)  / createStoreFactory ({ Component,  createContext,   createElement } )
+
+<h3>
+<a id="create-store-factory"  href="#create-store-factory"> createStoreFactory</a>  / <code>createStoreFactory ({ Component,  createContext,   createElement })</code>
+</h3>
+
  >__params__
 
 Прежде необходимо указать с какой библиотекой работает ваш проект. Это моет быть react, preact, inferno. Функция инициализации проекта, в качестве входных параметров принимет объект с тремя переменными.
@@ -182,9 +186,11 @@ const createStore = createStoreFactory({
 
 Вернет функцию __createStore__
 
-<h3><a id="create-store" href="#create-store">createStore</a> / <code>createStore(modules_array[, devtool_object])</code></h3>
+<h3>
+<a id="create-store-factory"  href="#create-store"> createStore</a>  / <code>createStore(modules_array[, devtool_object])</code>
+</h3>
 
->__params__
+ >__params__
 
 __modules_array__ - массив объектов  см. actions
 __devtool_object__ - необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
