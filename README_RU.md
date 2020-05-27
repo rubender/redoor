@@ -182,8 +182,9 @@ const createStore = createStoreFactory({
 
 Вернет функцию __createStore__
 
-### [createStore](#create-store) / `createStore(modules_array[, devtool_object])`
- >__params__
+<h3><a href="#create-store">createStore</a> / <code>createStore(modules_array[, devtool_object])</code></h3>
+
+>__params__
 
 __modules_array__ - массив объектов  см. actions
 __devtool_object__ - необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
