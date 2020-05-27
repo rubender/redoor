@@ -57,22 +57,22 @@
 **[Getting Started](#getting-started)**
 **[Documentation](#documentation)**
 &nbsp;&nbsp;&nbsp; **[Store](#store)**
-&nbsp;&nbsp;&nbsp; [createStoreFactory](#create-store-factory)
-&nbsp;&nbsp;&nbsp; [createStore](#create-store)
-&nbsp;&nbsp;&nbsp; [Provider](#Provider)
-&nbsp;&nbsp;&nbsp; [Connect](#Connect)
-&nbsp;&nbsp;&nbsp; **[Actions](#Actions)**
-&nbsp;&nbsp;&nbsp; [initState](#initState)
-&nbsp;&nbsp;&nbsp; [ACTION functions](#action-functions)
-&nbsp;&nbsp;&nbsp; [listen](#listen)
-&nbsp;&nbsp;&nbsp; [bindStateMethods](#bindStateMethods)
-&nbsp;&nbsp;&nbsp; [__module_name](#module-name)
-&nbsp;&nbsp;&nbsp; **[Components props ](#createStore)**
-&nbsp;&nbsp;&nbsp; [cxRun(action_name, args)](#cxRun-string)
-&nbsp;&nbsp;&nbsp; [cxRun(object)](#cxRun-object)
-&nbsp;&nbsp;&nbsp; [cxEmit](#cxEmit)
-**[Devtool](#Devtool)**
-**[License](#license)**
+&nbsp;&nbsp;&nbsp; [createStoreFactory](#create-store-factory) <br/>
+&nbsp;&nbsp;&nbsp; [createStore](#create-store)<br/>
+&nbsp;&nbsp;&nbsp; [Provider](#Provider)<br/>
+&nbsp;&nbsp;&nbsp; [Connect](#Connect)<br/>
+&nbsp;&nbsp;&nbsp; **[Actions](#Actions)**<br/>
+&nbsp;&nbsp;&nbsp; [initState](#initState)<br/>
+&nbsp;&nbsp;&nbsp; [ACTION functions](#action-functions)<br/>
+&nbsp;&nbsp;&nbsp; [listen](#listen)<br/>
+&nbsp;&nbsp;&nbsp; [bindStateMethods](#bindStateMethods)<br/>
+&nbsp;&nbsp;&nbsp; [__module_name](#module-name)<br/>
+&nbsp;&nbsp;&nbsp; **[Components props ](#createStore)**<br/>
+&nbsp;&nbsp;&nbsp; [cxRun(action_name, args)](#cxRun-string)<br/>
+&nbsp;&nbsp;&nbsp; [cxRun(object)](#cxRun-object)<br/>
+&nbsp;&nbsp;&nbsp; [cxEmit](#cxEmit)<br/>
+**[Devtool](#Devtool)**<br/>
+**[License](#license)**<br/>
 
 
 ## [About The Project](#about-the-project)
