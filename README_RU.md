@@ -6,17 +6,11 @@
 [![MIT License][license-shield]][license-url]
 <!--[![LinkedIn][linkedin-shield]][linkedin-url]-->
 
-<pre>
-  ______ _______ ______   _____   _____   ______
- |_____/ |______ |     \ |     | |     | |_____/
- |    \_ |______ |_____/ |_____| |_____| |    \_
-</pre>
+
 
 <br />
 <p align="center">
-  <h1 align="center">
-      <a href="https://github.com/rubender/redoor">🚪 redoor</a>
-  </h1>
+  <h1 align="center">🚪 redoor</h1>
   <h3 align="center">
       React / Preact / Inferno <br />
       State container manager
@@ -472,3 +466,10 @@ __object__ - объект обновления глобального стейт
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
+<pre>
+
+  ______ _______ ______   _____   _____   ______
+ |_____/ |______ |     \ |     | |     | |_____/
+ |    \_ |______ |_____/ |_____| |_____| |    \_
+
+</pre>
