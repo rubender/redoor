@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -8,6 +9,8 @@
 
 
 
+=======
+>>>>>>> 71ecb305919da2c2f50375c771dbdf5bbdcf07e5
 <br />
 <p align="center">
   <h1 align="center">🚪 redoor</h1>
