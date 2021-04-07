@@ -18,7 +18,9 @@ export function runDebugger(dbg_opt) {
       }
   }
   __dbg = (etype, name, args) => {
-    print_log(etype,name,args);
+    if(!!dbg_opt.log) {
+      print_log(etype,name,args);
+    }
   }
 
 
