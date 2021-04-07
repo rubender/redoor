@@ -185,7 +185,7 @@ __devtool_object__ - optional debugger object [redoor-devtool](https://github.co
 >  port  - port
 >  name  - name of project
 
-*пример:*
+*example:*
 ~~~javascript
 import * as actions_Main from './actions_Main.js'
 const { Provider, Connect } = createStore(
