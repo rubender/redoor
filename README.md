@@ -7,8 +7,6 @@
   </h3>
 </p>
 
-[[RU](https://github.com/rubender/redoor/blob/master/README_RU.md) / [EN](https://github.com/rubender/redoor) ]
-
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
 
