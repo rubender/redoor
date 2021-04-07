@@ -1,8 +1,7 @@
 
-<br />
-<p align="center">
-  <h1 align="center">🚪 redoor</h1>
-  <h3 align="center">
+<p>
+  <h1>redoor</h1>
+  <h3>
       React / Preact / Inferno <br />
       State container manager
   </h3>
