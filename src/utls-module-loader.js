@@ -16,7 +16,7 @@ export function testModulesAndGetActions({ Modules }) {
         );
       }
     }else {
-      module.__module_name = `module_No_${mod_cnt}`
+      //module.__module_name = `module_No_${mod_cnt}`
       __dbg('warn', 'initState',
         `Module in createStore No:[${mod_cnt+1}] has no __module_name; add to file \nexport const __module_name = "your module name";`
       );

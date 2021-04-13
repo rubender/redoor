@@ -10,11 +10,11 @@ export function runDebugger(dbg_opt) {
 
   function print_log(etype, name, args){
       if(etype === 'warn') {
-        console.warn(`rprovider: ${etype} : ${name} : ${args}`,args)
+        console.warn(`redoor: ${etype} : ${name} : ${args}`,args)
       }else if(etype === 'error') {
-        console.error(`rprovider: ${etype} : ${name} : ${args}`,args)
+        console.error(`redoor: ${etype} : ${name} : ${args}`,args)
       }else {
-        console.log(`rprovider: ${etype} : ${name} : ${args}`,args)
+        console.log(`redoor: ${etype} : ${name} : ${args}`,args)
       }
   }
   __dbg = (etype, name, args) => {
@@ -23,8 +23,7 @@ export function runDebugger(dbg_opt) {
     }
   }
 
-
-  console.log('provider.js -> runDebugger: ',dbg_opt, __dbg);
+  //console.log('provider.js -> runDebugger: ',dbg_opt, __dbg);
 
   const HOST = dbg_opt && dbg_opt.host || 'localhost';
   const PORT = dbg_opt && dbg_opt.port || 8666;

@@ -1,8 +1,8 @@
 {
   "name": "redoor",
   "version": "1.0.0",
-  "description": "React state manager",
-  "main": "lib/index.js",
+  "description": "Redoor state manager for React,Preact,Inferno",
+  "main": "lib/redoor.min.js",
   "author": "Ruslan Matshin",
   "license": "MIT",
   "homepage": "https://github.com/rubender/redoor",
@@ -13,9 +13,10 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "lodash": "4.17.19",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-terser": "^5.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "rollup": "^2.45.2"
+  }
 }

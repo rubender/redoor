@@ -129,7 +129,7 @@ function createStoreFactory({ Component, createContext, createElement }) {
           this.__updateState(newstate, resFn);
         } catch (e) {
           if (!__actions[actionName]) {
-            __dbg('error', actionName, 'provider.js -> No action function: [' + actionName + ']');
+            __dbg('error', actionName, 'redoor -> No action function: [' + actionName + ']');
           }
 
           __dbg('error', actionName, `Error: ',${e.toString()}`);
@@ -140,9 +140,7 @@ function createStoreFactory({ Component, createContext, createElement }) {
       __emit = (event, data) => {
         __dbg('emit', event, data);
         this.listeners.map(listener => {
-          setTimeout(()=>{
-            listener(event, data);
-          });
+          listener(event, data);
         });
       } // __emit
 
