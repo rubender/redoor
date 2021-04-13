@@ -1,6 +1,6 @@
 {
   "name": "redoor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Redoor state manager for React,Preact,Inferno",
   "main": "lib/redoor.min.js",
   "author": "Ruslan Matshin",
