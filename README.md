@@ -1,26 +1,11 @@
-<<<<<<< HEAD
-<!--
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]-->
-[![MIT License][license-shield]][license-url]
-<!--[![LinkedIn][linkedin-shield]][linkedin-url]-->
 
-
-
-=======
->>>>>>> 71ecb305919da2c2f50375c771dbdf5bbdcf07e5
-<br />
-<p align="center">
-  <h1 align="center">🚪 redoor</h1>
-  <h3 align="center">
+<p>
+  <h1>redoor</h1>
+  <h3>
       React / Preact / Inferno <br />
       State container manager
   </h3>
 </p>
-
-[[RU](https://github.com/rubender/redoor/blob/master/README_RU.md) / [EN](https://github.com/rubender/redoor) ]
 
 <!-- TABLE OF CONTENTS -->
 ## Table of Contents
@@ -49,7 +34,7 @@
 
 ## [About The Project](#about-the-project)
 
-Redoor стейт менеджер для React, Preact, Inferno.  Быстрая легкая библиотека всего 4.9kб.
+Redoor state manager for React, Preact, Inferno. A fast, lightweight library of only 4.9 kb.
 
 
 ## [Installation](#Installation)
@@ -66,7 +51,7 @@ yarn add redoor
 
 ##  [Getting Started](#getting-started)
 
-Пример для preact
+Example for preact
 ```javascript
 import { h, Component, createContext, render } from 'preact';
 import createStoreFactory from 'redoor';
@@ -131,20 +116,14 @@ render(<Main />, document.getElementById("app"));
 
 
 
-
-
-
-Redoor - состоит из двух сущностей: store и actaions.
-store - место хранения глобального стейта
-actaions  - методы взаимодействия с store и компонентами
+Redoor - consists of two entities: store and actions.
+store - the storage location of the global state
+actions - methods for interacting with the store and components
 
 
 
 ## [Store](#store)
-Модуль инициализации проекта, здесь необходимо импортировать и у казать все необходимые actions моуди проекта. Так же по необходимости указать дебагер.
-Первое что надо сделать это создать store. Для этого необходимо инициализировать два метода
-createStoreFactory и его результат createStore. createStore возвращает два метода которые необходимо использовать в компонентах.
-
+The project initialization module, here you need to import and specify all the necessary actions modules of the project. Also, if necessary, specify the debager options. The first thing to do is to create a store. To do this, you need to initialize two methods: createStoreFactory, createStore. createStore returns two methods that should be used in components.
 
 
 <h3>
@@ -155,7 +134,8 @@ createStoreFactory и его результат createStore. createStore воз�
 </h3>
 
 
-Прежде необходимо указать с какой библиотекой работает ваш проект. Это моет быть react, preact, inferno. Функция инициализации проекта, в качестве входных параметров принимет объект с тремя переменными.
+First, you need to specify which library your project works with. It can be react, preact, inferno. The project initialization function takes an object with three variables as input parameters.
+
 
 >__params__
 
@@ -186,7 +166,7 @@ const createStore = createStoreFactory({
 
 >__return__
 
-Вернет функцию **createStore**
+Returns function **createStore**
 
 
 
@@ -199,13 +179,13 @@ const createStore = createStoreFactory({
 
 >__params__
 
-__modules_array__ - массив объектов (модулей) см. actions <br/>
-__devtool_object__ - необязательный параметр включения [redoor-devtool](https://github.com/rubender/redoor-devtool). По умолчанию false. Если вы хотите подключить devtool сервер укажите объект содержащий:
+__modules_array__ - for an array of objects (modules), see actions <br/>
+__devtool_object__ - optional debugger object [redoor-devtool](https://github.com/rubender/redoor-devtool). Default is false. If you want to connect the devtool server specify the object:
 >  host  - ip devtool сервера
->  port  - порт
->  name  - название проекта
+>  port  - port
+>  name  - name of project
 
-*пример:*
+*example:*
 ~~~javascript
 import * as actions_Main from './actions_Main.js'
 const { Provider, Connect } = createStore(
@@ -219,7 +199,7 @@ const { Provider, Connect } = createStore(
 ~~~
 >__return__
 
-Возвращает объект  **{ Provider , Connect }**
+Returns object  **{ Provider , Connect }**
 
 
 
@@ -228,13 +208,13 @@ const { Provider, Connect } = createStore(
     <code>&#60;Provider&#62;&#60;/Provider&#62;</code>
 </h3>
 
-Рутовый компонент, потомки которого могут быть подключены с помощью функции **Connect**
+A root component whose descendants can be connected using the function **Connect**
 
 >__props__
 
-__providerConfig__  - "пропс" компонента передается в функцию  **initState** модуля "акшенсов".
+__providerConfig__  - Property of the component is passed to the **initState** function of the "actions" module.
 
-*пример:*
+*example:*
 ~~~javascript
 import {Provider} from './store.js'
 <Provider>
@@ -251,18 +231,18 @@ import {Provider} from './store.js'
     </code>
 </h3>
 
-Функция соеденения redoor стора с компонентом
+Connecting the redoor store to the component
 
 >__params__
 
-**Component** - компонент к которому необходимо подключить redoor <br/>
-**filter_props_string** - стринговая переменная, список параметров кторые необходимо передать компоненту. Переменные должны быть разделены запятой.
+**Component** - the component to connect to <br/>
+**filter_props_string** - string variable, a list of parameters that must be passed to the component. Variables must be separated by commas. By default connect all props to component
 
 > __return __
 
-Возвращает компонент
+Returns the component
 
-*пример:*
+*example:*
 ~~~javascript
 import {Connect} from './store.js'
 const Component = ({counter, text})=><div>{text}:{counter}</div>
@@ -273,9 +253,7 @@ export default Connect(Component, "text, counter")
 
 ## [Actions](#Actions)
 
-Все акшенсы, а также вспомогательные функции должны быть переданы в массив **createStore**
-Модуль акшенсов имеет несколько функций название которых зарезерованно redoor. Названия акшенсов должны начинаться с префиксов: **a_** или **action**. Каждый модуль акшенсов может экспортировать свою функцию инициализации. Redoor объединит все объекты в один. В случае если вы продублируете один и тот же параметр в разных модулях redoor выведет в консоль ошибку. Чтобы понять в каких модулях произошла ошибка укажите **__module_name** переменную в ваш модуль.
-
+The action module has several functions, the name of which is redoor. Action names must start with the following prefixes: **a_** or **action**. Each action module can export its own initialization function. Redoor will merge all the objects into one. If you duplicate the same parameter in different modules, redoor will output an error to the console. To understand which modules the error occurred in, specify the ** __module_name* * variable in your module.
 
 
 
@@ -286,13 +264,13 @@ export default Connect(Component, "text, counter")
     </code>
 </h3>
 
-Зарезервированная функция инициализации стора.    Она может быть как объект так и функция.
+Reserved store initialization function. It can be either an object or a function.
 >__params__
 
- __providerConfig__ ---  параметр получаемый от __Provider__ <br/>
+ __providerConfig__ ---  parameter received from __Provider__ <br/>
 >__return__
 
-функция должна вернуть объект с начальными значениями стора
+the function should return an object with the initial values of the store
 
 
 
@@ -303,19 +281,20 @@ export default Connect(Component, "text, counter")
     </code>
 </h3>
 
-Акшенсы --- функции реализации логики работы с компанентами и сторам. Которые вызывают компоненты посредством __cxRun__. Функции должны в названии меть префикс __a___ или __action__,  в случае es6 модулей должны быть экспортированы.
+
+Actions - - - functions for implementing the logic of working with components and sotre. Which call components via __cxRun__. Functions must be prefixed with __a___ or __action__ in the name, in the case of es6 modules, they must be exported.
  >__params__
 
-Каждый акшенс имеет в качестве параметра объект с тремя аргументами:
-__state__  --- текущий глобальный стейт <br/>
-__args__ --- параметр передаваемый через __cxRun__ <br/>
-__emit(name, data)__ --- функция отправки глобального события. Где  __name__ --- название события, __data__ --- передоваемые данные <br/>
+Every action has object as a parameter with three arguments:
+__state__ --- the current global state <br/>
+__args__ --- the parameter passed through __cxRun__ <br/>
+__emit(name, data)__ --- function to send global event. Where __name__ - - - event name, _ _ data__ - - - transmitted data <br/>
 
 >__return__
+The function can return an object with new store data and update all the components that are subscribed to them. Important! For async functions you need to use __setState__ from __bindStateMethods__.
 
-Функция может вернуть объект с новыми данными стора и обновят все компоненты которые на них подписаны. Важно! Если функция будет асинхронной, то необходимо воспользоваться __setState__ из __bindStateMethods__.
 
-*пример:*
+*example:*
 ~~~javascript
 export const a_switch = ({ state }) => {
     return  {
@@ -324,7 +303,7 @@ export const a_switch = ({ state }) => {
 }
 ~~~
 
-*асинхронный код:*
+*async:*
 ~~~javascript
 // cxRun("a_getUsers", "user_1")
 let __getState;
@@ -353,13 +332,13 @@ export const a_getUsers = async ({ args: user_id, emit }) => {
     </code>
 </h3>
 
-Каждый акшен модуль может содержать функцию которая инициируется каждый раз когда происходит событие генерированное функцией __emit__ компонентом или акшенсом.
+Each action module can contain a function that is triggered every time an event occurs generated by the __emit__ function of a component or action.
  >__params__
 
-__name__ - название события <br/>
-__data__ - данные переданные через функцию __emit__ <br/>
+__name__ - event name <br/>
+__data__ - data passed through the function __emit__ <br/>
 >__return__
-нет
+no
 
 
 
@@ -371,16 +350,17 @@ __data__ - данные переданные через функцию __emit__ 
 </h3>
 
 
-Если вы ваши акшенсы имеют асинхронный кода то необходимо пробросить функции обнаваления стейта redoor. Это так же может быть полезно в случае работы с вебсокетами
+
+If you your actions have asynchronous code, then you need to throw the update functions of the redoor state. This can also be useful when working with websockets
  >__params__
 
-__getState__ -  функция получения стейта <br/>
-__setState__ - функция установки стейта <br/>
-__emit__ - функция отправки события <br/>
+__getState__ -  get state function <br/>
+__setState__ -  set state function <br/>
+__emit__ - send event function <br/>
 >__return__
-нет
+no
 
-*пример:*
+*example:*
 ~~~javascript
 let __setState;
 let __getState;
@@ -414,12 +394,13 @@ export const  __module_name = 'pay_module'
         cxRun(action_name, args)
     </code>
 </h3>
-Функция инициации акшенса или обновления стейта на прямую. Автоматически добавляется связанным компонентам через props.
+
+The function of initiating an action or updating the state directly. Automatically bind to related components via props.
 
 > **params:**
 
-__action_name__ - стринговая переменная название акшена <br/>
-__args__ - передоваемые акшену данные <br/>
+__action_name__ - name of action (string)<br/>
+__args__ - any data (object,string array) <br/>
 
 > **return:**
 нет
@@ -433,12 +414,12 @@ __args__ - передоваемые акшену данные <br/>
     </code>
 </h3>
 
-Если в качестве параметра указан объект, то функция обнавляет стейт напрямую без акшена.
+If an object is specified as a parameter, the function updates the state directly without an action.
  >__params__
 
-__object__ - объект обновления глобального стейта <br/>
+__object__ - object to update state <br/>
  >__return__
- нет
+ no
 
 
 
@@ -449,14 +430,14 @@ __object__ - объект обновления глобального стейт
         cxEmit(event_name, args)
     </code>
 </h3>
-Функция отправки глобального события.
+Function for sending a global event.
 >__params__
 
- __event_name__ - название события <br/>
- __data__ - передоваемые данные <br/>
+ __event_name__ - event name <br/>
+ __data__ - any data <br/>
 
 >__return__
-  нет
+  no
 
 <!-- Devtool -->
 ## [Devtool](#devtool)
