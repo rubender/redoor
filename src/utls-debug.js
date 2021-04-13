@@ -9,6 +9,7 @@ export function runDebugger(dbg_opt) {
   let __ws = {};
 
   function print_log(etype, name, args){
+    if(!!dbg_opt.log) {
       if(etype === 'warn') {
         console.warn(`redoor: ${etype} : ${name} : ${args}`,args)
       }else if(etype === 'error') {
@@ -16,6 +17,7 @@ export function runDebugger(dbg_opt) {
       }else {
         console.log(`redoor: ${etype} : ${name} : ${args}`,args)
       }
+    }
   }
   __dbg = (etype, name, args) => {
     if(!!dbg_opt.log) {
@@ -23,10 +25,8 @@ export function runDebugger(dbg_opt) {
     }
   }
 
-  //console.log('provider.js -> runDebugger: ',dbg_opt, __dbg);
-
   const HOST = dbg_opt && dbg_opt.host || 'localhost';
-  const PORT = dbg_opt && dbg_opt.port || 8666;
+  const PORT = dbg_opt && dbg_opt.port || 8333;
   const wsurl = `ws://${HOST}:${PORT}`;
   const proj_name = dbg_opt && dbg_opt.name || ('debugger'+~~(Math.random()*1000));
 
