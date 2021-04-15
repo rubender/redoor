@@ -24,7 +24,7 @@ function createStoreFactory({ Component, createContext, createElement }) {
 
   const CreateConnect = (Consumer) => (UserComponent, filterParam) => {
     const mapStateToProps = getStatePropsFilterFunction(filterParam);
-    const RenderComponent = props => createElement(UserComponent,  {...props}, null); //props => <UserComponent {...props} />;
+    const RenderComponent = props => createElement(UserComponent,  {...props}, props.children); //props => <UserComponent {...props} />;
 
     const ConnectedComponent = props => createElement(
         Consumer,
@@ -39,8 +39,8 @@ function createStoreFactory({ Component, createContext, createElement }) {
             cxRun:cxRun,
             cxEmit:cxEmit,
           }
-          return createElement(PureComponent, {...p}, null); // <PureComponent {...p} />;
-        } // cchildren
+          return createElement(PureComponent, {...p}, props.children); // <PureComponent {...p} />;
+        } // children
     ); //ConnectedComponent
 
 
